@@ -1,4 +1,5 @@
 import Container from "@/components/container";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           and exploring new technologies. I'm currently working as a frontend
           engineer at Google.
         </p>
+        <Projects />
       </Container>
     </div>
   );
