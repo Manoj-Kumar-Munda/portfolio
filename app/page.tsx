@@ -3,7 +3,7 @@ import Container from "@/components/container";
 export default function Home() {
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container className="min-h-screen">
+      <Container className="min-h-screen p-4 md:p-10">
         <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
           Hello, there
         </h1>
