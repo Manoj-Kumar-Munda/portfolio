@@ -2,10 +2,12 @@ import Container from "@/components/container";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-start justify-start">
+    <div className="flex min-h-screen items-start justify-start">
       <Container className="min-h-screen">
-        <h1 className="text-2xl md:text-4xl font-bold tracking-tight">Hello, there</h1>
-        <p>
+        <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
+          Hello, there
+        </h1>
+        <p className="text-secondary w-full max-w-4xl pt-4 text-sm md:text-base">
           I am a software engineer with a passion for building web applications
           and exploring new technologies. I'm currently working as a frontend
           engineer at Google.
