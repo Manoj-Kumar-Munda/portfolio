@@ -1,5 +1,5 @@
 import { listPosts } from "@/lib/posts";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 const AllBlogs = async () => {
   const posts = await listPosts();
@@ -16,7 +16,7 @@ const AllBlogs = async () => {
         {posts.map((post) => (
           <Link
             href={`/blogs/${post.slug}`}
-            className="prose-img:m-0 prose-h2:m-0 flex cursor-pointer items-start justify-between gap-2 rounded p-2 hover:bg-neutral-100 md:p-4 no-underline"
+            className="prose-img:m-0 prose-h2:m-0 flex cursor-pointer items-start justify-between gap-2 rounded p-2 no-underline hover:bg-neutral-100 md:p-4"
             key={post.title}
           >
             <div className="flex flex-col justify-start gap-1">
