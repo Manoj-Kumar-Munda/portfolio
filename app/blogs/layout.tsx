@@ -1,7 +1,7 @@
 import Container from "@/components/container";
 
 export const metadata = {
-  title: "Blogs - Portfolio website template",
+  title: "Blogs - Manoj",
   description: "A perfect portfolio website template to showcase your work.",
 };
 

@@ -12,7 +12,10 @@ export async function generateMetadata({
     const { frontmatter } = await getPostBySlug(slug);
 
     if (frontmatter?.title) {
-      return { title: String(frontmatter.title) };
+      return {
+        title: String(frontmatter.title) + " by Manoj",
+        description: frontmatter.description || "A blog post by Manoj",
+      };
     }
   } catch (err) {
     return { title: "Post Not Found" };
