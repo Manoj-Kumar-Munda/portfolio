@@ -22,7 +22,7 @@ const navItems = [
   },
   {
     title: "Blog",
-    href: "/blog",
+    href: "/blogs",
   },
 ];
 const Navbar = () => {
