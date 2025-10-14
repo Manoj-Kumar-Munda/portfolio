@@ -28,8 +28,9 @@ const projectList = [
 
 const Projects = () => {
   return (
-    <div className="py-10">
-      <p className="text-secondary max-w-lg pt-4 text-sm md:text-base">
+    <div className="py-8">
+      <h2 className="text-3xl font-bold tracking-tight ">Projects</h2>
+      <p className="text-secondary pt-2 text-sm md:text-base">
         I love building projects that solve real-world problems and help people.
       </p>
       <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-2">
@@ -53,10 +54,10 @@ const Projects = () => {
               height={300}
               className="h-56 w-full rounded-xl object-cover"
             />
-            <h2 className="mt-2 text-lg font-medium tracking-tight text-neutral-600 dark:text-neutral-400">
+            <h2 className="mt-2 pl-1 text-lg font-medium tracking-tight text-neutral-600 dark:text-neutral-400">
               {project.title}
             </h2>
-            <p className="max-w-xs text-xs text-gray-500 dark:text-neutral-400">
+            <p className="max-w-xs pl-1 text-xs text-gray-500 dark:text-neutral-400">
               {project.description}
             </p>
           </motion.div>
