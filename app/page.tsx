@@ -1,5 +1,6 @@
 import Container from "@/components/container";
 import Projects from "@/components/projects";
+import Blogs from "./blogs/_components/blogs";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
           engineer at Google.
         </p>
         <Projects />
+        <p className="text-secondary mb-4">A collection of all blog posts written by me.</p>
+        <Blogs />
       </Container>
     </div>
   );
