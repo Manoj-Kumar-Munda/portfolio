@@ -7,8 +7,11 @@ export async function getPostBySlug(slug: string) {
   const filePath = path.join(process.cwd(), "content", `${slug}.mdx`);
   const raw = await fs.readFile(filePath, "utf8");
 
+  const { frontmatter, content } = await compileMDXFile(raw);
+
   return {
-    rawContent: raw,
+    frontmatter,
+    content,
   };
 }
 
@@ -32,11 +35,11 @@ export async function listPosts() {
   const slugs = await listPostSlugs();
   const posts = await Promise.all(
     slugs.map(async (slug) => {
-      const { rawContent } = await getPostBySlug(slug);
-      const { frontmatter } = await compileMDXFile(rawContent);
-      return  frontmatter ;
+      const { frontmatter } = await getPostBySlug(slug);
+
+      return frontmatter;
     }),
   );
- 
+
   return posts;
 }
