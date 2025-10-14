@@ -3,7 +3,13 @@ import Image from "next/image";
 import Container from "./container";
 import profile from "../public/profile-new.png";
 import Link from "next/link";
-import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -29,6 +35,11 @@ const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 100], [0.8, 0.5]);
+  const blur = useTransform(scrollY, [0, 100], [0, 3]);
+
+  const backgroundOpacity = useMotionTemplate`rgba(255, 255, 255, ${opacity})`;
+  const blurStyle = useMotionTemplate`blur(${blur}px)`;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 20) {
@@ -41,17 +52,26 @@ const Navbar = () => {
   return (
     <Container className="h-16">
       <motion.nav
+        style={{
+          backdropFilter: blurStyle,
+          background: backgroundOpacity,
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
         animate={{
-          boxShadow: isScrolled ? "0 4px 2px -2px rgba(0,0,0,0.2)" : "none",
           width: isScrolled ? "60%" : "100%",
-          y: isScrolled ? 10 : 0,
+          y: isScrolled ? 8 : 0,
+          border: isScrolled ? "1px solid rgba(200,200,200,0.2)" : "none",
+
           transition: {
             duration: 0.3,
-            ease: "linear",
+            ease: "easeOut",
           },
         }}
         className={cn(
-          "fixed inset-x-0 top-0 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-white px-3 py-2 dark:bg-neutral-900",
+          "fixed inset-x-0 top-0 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-transparent px-3 py-2 dark:bg-neutral-900",
         )}
       >
         <Image
