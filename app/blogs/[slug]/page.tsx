@@ -1,6 +1,23 @@
 import React from "react";
-import { compileMDXFile, getPostBySlug, listPostSlugs } from "@/lib/posts";
+import { getPostBySlug, listPostSlugs } from "@/lib/posts";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
+  try {
+    const { frontmatter } = await getPostBySlug(slug);
+
+    if (frontmatter?.title) {
+      return { title: String(frontmatter.title) };
+    }
+  } catch (err) {
+    return { title: "Post Not Found" };
+  }
+}
 
 export default async function Page({
   params,
@@ -8,13 +25,8 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-
-  console.log({ slug });
-
   try {
-    const { rawContent } = await getPostBySlug(slug);
-
-    const { content, frontmatter } = await compileMDXFile(rawContent);
+    const { content, frontmatter } = await getPostBySlug(slug);
 
     return (
       <article>
