@@ -1,16 +1,13 @@
+import { PostFrontmatter } from "@/types/post";
 import fs from "fs/promises";
+import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
-import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
-import type { PostFrontmatter } from "@/types/post";
 
 export async function getPostBySlug(slug: string) {
   const filePath = path.join(process.cwd(), "content", `${slug}.mdx`);
   const raw = await fs.readFile(filePath, "utf8");
 
   return {
-    // frontmatter: data as PostFrontmatter,
-    // mdxSource,
     rawContent: raw,
   };
 }
@@ -22,4 +19,24 @@ export async function listPostSlugs() {
   return files
     .filter((f) => f.endsWith(".mdx"))
     .map((f) => f.replace(/\.mdx$/, ""));
+}
+
+export const compileMDXFile = async (rawContent: string) => {
+  return await compileMDX<PostFrontmatter>({
+    source: `${rawContent}`,
+    options: { parseFrontmatter: true },
+  });
+};
+
+export async function listPosts() {
+  const slugs = await listPostSlugs();
+  const posts = await Promise.all(
+    slugs.map(async (slug) => {
+      const { rawContent } = await getPostBySlug(slug);
+      const { frontmatter } = await compileMDXFile(rawContent);
+      return  frontmatter ;
+    }),
+  );
+ 
+  return posts;
 }

@@ -1,6 +1,5 @@
 import React from "react";
-import { compileMDX } from "next-mdx-remote/rsc";
-import { getPostBySlug, listPostSlugs } from "@/lib/posts";
+import { compileMDXFile, getPostBySlug, listPostSlugs } from "@/lib/posts";
 import { notFound } from "next/navigation";
 
 export default async function Page({
@@ -15,10 +14,7 @@ export default async function Page({
   try {
     const { rawContent } = await getPostBySlug(slug);
 
-    const { content, frontmatter } = await compileMDX<{ title: string }>({
-      source: `${rawContent}`,
-      options: { parseFrontmatter: true },
-    });
+    const { content, frontmatter } = await compileMDXFile(rawContent);
 
     return (
       <article>
