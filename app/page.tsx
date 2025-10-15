@@ -7,7 +7,7 @@ import Subheading from "@/components/subheading";
 export default function Home() {
   return (
     <Container className="min-h-screen p-4 md:p-10 ">
-      <Heading>Hello, there</Heading>
+      <Heading>Manoj Kr. Munda</Heading>
       <Subheading>
         I am a software engineer with a passion for building web applications
         and exploring new technologies. I'm currently working as a frontend

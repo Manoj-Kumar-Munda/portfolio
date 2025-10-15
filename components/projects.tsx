@@ -54,9 +54,9 @@ const Projects = () => {
               alt={project.title}
               width={500}
               height={300}
-              className="h-56 w-full rounded-xl object-cover"
+              className="h-60 w-full rounded-xl object-cover"
             />
-            <h2 className="mt-2 pl-1 text-lg font-medium tracking-tight text-neutral-600 dark:text-neutral-400">
+            <h2 className="mt-2 pl-1 text-base font-semibold tracking-tight text-neutral-600 dark:text-neutral-400">
               {project.title}
             </h2>
             <p className="max-w-xs pl-1 text-xs text-gray-500 dark:text-neutral-400">
