@@ -38,8 +38,6 @@ const Navbar = () => {
   const opacity = useTransform(scrollY, [0, 100], [0.8, 0.5]);
   const blur = useTransform(scrollY, [0, 100], [0, 3]);
   const pathname = usePathname();
-  console.log({pathname});
-  
 
   const backgroundOpacity = useMotionTemplate`rgba(255, 255, 255, ${opacity})`;
   const blurStyle = useMotionTemplate`blur(${blur}px)`;
@@ -71,13 +69,15 @@ const Navbar = () => {
         "sticky inset-x-0 top-0 z-20 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-transparent px-3 py-2 dark:bg-neutral-900",
       )}
     >
-      <Image
-        src={profile}
-        alt="Profile"
-        width={100}
-        height={100}
-        className="size-10 rounded-full object-cover"
-      />
+      <Link href={"/"}>
+        <Image
+          src={profile}
+          alt="Profile"
+          width={100}
+          height={100}
+          className="size-10 rounded-full object-cover"
+        />
+      </Link>
 
       <div className="flex items-center">
         {navItems.map((item, idx) => (
