@@ -11,13 +11,11 @@ const Heading = ({
 }) => {
   return (
     <motion.div
-      initial={{ filter: "blur(3px)", y: 8 }}
+      initial={{ filter: "blur(3px)", y: 20 }}
       whileInView={{ filter: "blur(0px)", y: 0 }}
       viewport={{ once: true }}
       transition={{
-        type: "tween",
         ease: "easeInOut",
-        damping:12
       }}
     >
       <Tag className="text-primary text-2xl font-bold tracking-tighter drop-shadow-lg md:text-4xl">

@@ -13,13 +13,11 @@ const Subheading = ({
 }) => {
   return (
     <motion.div
-      initial={{ filter: "blur(3px)", y: 8 }}
+      initial={{ filter: "blur(3px)", y: 20 }}
       whileInView={{ filter: "blur(0px)", y: 0 }}
       viewport={{ once: true }}
       transition={{
-        delay: 0.2,
-        type: "tween",
-        ease: "linear",
+        ease: "easeInOut",
       }}
     >
       <Tag
