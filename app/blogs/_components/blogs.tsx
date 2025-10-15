@@ -8,11 +8,11 @@ const Blogs = async ({ className }: { className?: string }) => {
       {posts.map((post) => (
         <Link
           href={`/blogs/${post.slug}`}
-          className="prose-img:m-0 prose-h2:m-0 flex cursor-pointer items-start justify-between gap-2 rounded p-2 no-underline hover:bg-neutral-50 md:p-4"
+          className="prose-img:m-0 prose-h2:m-0 flex cursor-pointer items-start justify-between gap-2 rounded-md p-2 no-underline hover:bg-neutral-50 md:p-4"
           key={post.title}
         >
-          <div className="flex flex-col justify-start gap-1">
-            <h2 className="text-base md:text-lg">{post.title}</h2>
+          <div className="flex max-w-xl flex-col justify-start gap-1 ">
+            <h2 className="text-base font-bold">{post.title}</h2>
             <p className="line-clamp-3 text-xs text-neutral-500 md:text-sm">
               {post.description}
             </p>
