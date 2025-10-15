@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Container from "./container";
 import profile from "../public/profile-new.png";
 import Link from "next/link";
 import {
@@ -12,6 +11,7 @@ import {
 } from "motion/react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   {
@@ -37,6 +37,9 @@ const Navbar = () => {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 100], [0.8, 0.5]);
   const blur = useTransform(scrollY, [0, 100], [0, 3]);
+  const pathname = usePathname();
+  console.log({pathname});
+  
 
   const backgroundOpacity = useMotionTemplate`rgba(255, 255, 255, ${opacity})`;
   const blurStyle = useMotionTemplate`blur(${blur}px)`;
@@ -65,7 +68,7 @@ const Navbar = () => {
         ease: "easeInOut",
       }}
       className={cn(
-        "sticky inset-x-0 top-0 mx-auto z-20 flex max-w-4xl items-center rounded-full justify-between bg-transparent px-3 py-2 dark:bg-neutral-900",
+        "sticky inset-x-0 top-0 z-20 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-transparent px-3 py-2 dark:bg-neutral-900",
       )}
     >
       <Image
@@ -81,7 +84,9 @@ const Navbar = () => {
           <Link
             key={item.title}
             href={item.href}
-            className="relative px-2 py-1"
+            className={cn("relative px-2 py-1", {
+              "text-neutral-400": pathname === item.href,
+            })}
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
