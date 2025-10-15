@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import Subheading from "./subheading";
+import Heading from "./heading";
 
 const projectList = [
   {
@@ -30,7 +31,7 @@ const projectList = [
 const Projects = () => {
   return (
     <div className="py-8">
-      <h2 className="text-3xl font-bold tracking-tight">Projects</h2>
+      <Heading>Projects</Heading>
       <Subheading as="p">
         I love building projects that solve real-world problems and help people.
       </Subheading>

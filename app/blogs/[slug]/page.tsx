@@ -32,7 +32,7 @@ export default async function Page({
     const { content, frontmatter } = await getPostBySlug(slug);
 
     return (
-      <article>
+      <article className="prose">
         {frontmatter?.title && (
           <h1 className="mb-4 text-3xl font-bold">
             {String(frontmatter.title)}
