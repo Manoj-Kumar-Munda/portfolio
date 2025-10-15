@@ -56,22 +56,17 @@ const Navbar = () => {
           backdropFilter: blurStyle,
           background: backgroundOpacity,
         }}
-        transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-        }}
         animate={{
           width: isScrolled ? "60%" : "100%",
           y: isScrolled ? 8 : 0,
           border: isScrolled ? "1px solid rgba(200,200,200,0.2)" : "none",
-
-          transition: {
-            duration: 0.3,
-            ease: "easeOut",
-          },
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
         }}
         className={cn(
-          "fixed inset-x-0 top-0 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-transparent px-3 py-2 dark:bg-neutral-900",
+          "fixed inset-x-0 top-0 mx-auto flex max-w-4xl w-full items-center justify-between rounded-full bg-transparent px-3 py-2 dark:bg-neutral-900",
         )}
       >
         <Image
