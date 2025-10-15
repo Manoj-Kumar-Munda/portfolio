@@ -1,23 +1,23 @@
 import Container from "@/components/container";
 import Projects from "@/components/projects";
 import Blogs from "./blogs/_components/blogs";
+import Heading from "@/components/heading";
+import Subheading from "@/components/subheading";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-start justify-start">
-      <Container className="min-h-screen p-4 md:p-10">
-        <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
-          Hello, there
-        </h1>
-        <p className="text-secondary w-full max-w-4xl pt-4 text-sm md:text-base">
-          I am a software engineer with a passion for building web applications
-          and exploring new technologies. I'm currently working as a frontend
-          engineer at Google.
-        </p>
-        <Projects />
-        <p className="text-secondary mb-4">A collection of all blog posts written by me.</p>
-        <Blogs />
-      </Container>
-    </div>
+    <Container className="min-h-screen p-4 md:p-10 ">
+      <Heading>Hello, there</Heading>
+      <Subheading>
+        I am a software engineer with a passion for building web applications
+        and exploring new technologies. I'm currently working as a frontend
+        engineer at Google.
+      </Subheading>
+      <Projects />
+      <Subheading className="text-secondary mb-4">
+        A collection of all blog posts written by me.
+      </Subheading>
+      <Blogs />
+    </Container>
   );
 }

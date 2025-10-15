@@ -50,54 +50,52 @@ const Navbar = () => {
   });
 
   return (
-    <Container className="h-16">
-      <motion.nav
-        style={{
-          backdropFilter: blurStyle,
-          background: backgroundOpacity,
-        }}
-        animate={{
-          width: isScrolled ? "60%" : "100%",
-          y: isScrolled ? 8 : 0,
-          border: isScrolled ? "1px solid rgba(200,200,200,0.2)" : "none",
-        }}
-        transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-        }}
-        className={cn(
-          "fixed inset-x-0 top-0 mx-auto flex max-w-4xl w-full items-center justify-between rounded-full bg-transparent px-3 py-2 dark:bg-neutral-900",
-        )}
-      >
-        <Image
-          src={profile}
-          alt="Profile"
-          width={100}
-          height={100}
-          className="size-10 rounded-full object-cover"
-        />
+    <motion.nav
+      style={{
+        backdropFilter: blurStyle,
+        background: backgroundOpacity,
+      }}
+      animate={{
+        width: isScrolled ? "70%" : "100%",
+        y: isScrolled ? 8 : 0,
+        border: isScrolled ? "1px solid rgba(200,200,200,0.2)" : "none",
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
+      }}
+      className={cn(
+        "sticky inset-x-0 top-0 mx-auto z-20 flex max-w-4xl items-center rounded-full justify-between bg-transparent px-3 py-2 dark:bg-neutral-900",
+      )}
+    >
+      <Image
+        src={profile}
+        alt="Profile"
+        width={100}
+        height={100}
+        className="size-10 rounded-full object-cover"
+      />
 
-        <div className="flex items-center">
-          {navItems.map((item, idx) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className="relative px-2 py-1"
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              {hoveredIndex === idx && (
-                <motion.span
-                  layoutId="hover-span"
-                  className="dark:bg-neutal-800 absolute inset-0 h-full w-full rounded-md bg-neutral-100"
-                />
-              )}
-              <span className="relative z-10 text-sm">{item.title}</span>
-            </Link>
-          ))}
-        </div>
-      </motion.nav>
-    </Container>
+      <div className="flex items-center">
+        {navItems.map((item, idx) => (
+          <Link
+            key={item.title}
+            href={item.href}
+            className="relative px-2 py-1"
+            onMouseEnter={() => setHoveredIndex(idx)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            {hoveredIndex === idx && (
+              <motion.span
+                layoutId="hover-span"
+                className="dark:bg-neutal-800 absolute inset-0 h-full w-full rounded-md bg-neutral-100"
+              />
+            )}
+            <span className="relative z-10 text-sm">{item.title}</span>
+          </Link>
+        ))}
+      </div>
+    </motion.nav>
   );
 };
 
