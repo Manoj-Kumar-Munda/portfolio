@@ -6,3 +6,9 @@ export interface PostFrontmatter {
   tags?: string[];
   image?: string;
 }
+
+export interface IProjects {
+  title: string;
+  description: string;
+  src: string;
+}

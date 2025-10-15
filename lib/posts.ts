@@ -1,4 +1,4 @@
-import { PostFrontmatter } from "@/types/post";
+import { PostFrontmatter } from "@/types";
 import fs from "fs/promises";
 import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";

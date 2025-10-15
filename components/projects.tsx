@@ -3,16 +3,17 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import Subheading from "./subheading";
+import { IProjects } from "@/types";
 import { projectList } from "@/constants";
 
-const Projects = () => {
+const Projects = ({ projects = projectList }: { projects: IProjects[] }) => {
   return (
     <div className="py-8">
       <Subheading as="p">
         I love building projects that solve real-world problems and help people.
       </Subheading>
-      <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-2">
-        {projectList.map((project, idx) => (
+      <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
+        {projects.map((project, idx) => (
           <motion.div
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -24,14 +25,14 @@ const Projects = () => {
               delay: idx * 0.1,
             }}
             key={idx}
-            className="rounded-lg"
+            className="shrink-0 rounded-lg"
           >
             <Image
               src={project.src}
               alt={project.title}
               width={500}
-              height={300}
-              className="h-60 w-full rounded-xl object-cover"
+              height={280}
+              className="w-full rounded-xl object-cover"
             />
             <h2 className="mt-2 pl-1 text-base font-semibold tracking-tight text-neutral-600 dark:text-neutral-400">
               {project.title}

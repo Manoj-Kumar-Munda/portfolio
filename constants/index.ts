@@ -1,5 +1,6 @@
+import { type IProjects } from "@/types";
 
-export const projectList = [
+export const projectList: IProjects[] = [
   {
     title: "Project One",
     description: "A brief description of Project One.",
