@@ -3,35 +3,11 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import Subheading from "./subheading";
-import Heading from "./heading";
-
-const projectList = [
-  {
-    title: "Project One",
-    description: "A brief description of Project One.",
-    src: "/project-1.png",
-  },
-  {
-    title: "Project Two",
-    description: "A brief description of Project Two.",
-    src: "/project-2.png",
-  },
-  {
-    title: "Project Three",
-    description: "A brief description of Project Three.",
-    src: "/project-3.png",
-  },
-  {
-    title: "Project Four",
-    description: "A brief description of Project Four.",
-    src: "/project-4.png",
-  },
-];
+import { projectList } from "@/constants";
 
 const Projects = () => {
   return (
     <div className="py-8">
-      <Heading>Projects</Heading>
       <Subheading as="p">
         I love building projects that solve real-world problems and help people.
       </Subheading>
@@ -41,6 +17,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             whileHover={{ scale: 1.05 }}
+            viewport={{ once: true }}
             transition={{
               duration: 0.3,
               ease: "easeInOut",
