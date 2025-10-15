@@ -91,7 +91,7 @@ const Navbar = () => {
                 className="dark:bg-neutal-800 absolute inset-0 h-full w-full rounded-md bg-neutral-100"
               />
             )}
-            <span className="relative z-10 text-sm">{item.title}</span>
+            <span className="relative z-10 text-xs">{item.title}</span>
           </Link>
         ))}
       </div>
