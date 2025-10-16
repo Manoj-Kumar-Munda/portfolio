@@ -6,7 +6,7 @@ import Subheading from "./subheading";
 import { IProjects } from "@/types";
 import { projectList } from "@/constants";
 
-const Projects = ({ projects = projectList }: { projects: IProjects[] }) => {
+const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
   return (
     <div className="py-8">
       <Subheading as="p">
