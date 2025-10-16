@@ -57,16 +57,17 @@ const Navbar = () => {
         background: backgroundOpacity,
       }}
       animate={{
-        width: isScrolled ? "70%" : "100%",
+        width: isScrolled ? "80%" : "100%",
         y: isScrolled ? 8 : 0,
         border: isScrolled ? "1px solid rgba(200,200,200,0.2)" : "none",
+        borderRadius: isScrolled ? "999px" : "0",
       }}
       transition={{
         duration: 0.3,
         ease: "easeInOut",
       }}
       className={cn(
-        "sticky inset-x-0 top-0 z-20 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-transparent px-3 py-2 dark:bg-neutral-900",
+        "sticky inset-x-0 top-0 z-20 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-transparent px-2 py-1 dark:bg-neutral-900",
       )}
     >
       <Link href={"/"}>
@@ -96,7 +97,7 @@ const Navbar = () => {
                 className="dark:bg-neutal-800 absolute inset-0 h-full w-full rounded-md bg-neutral-100"
               />
             )}
-            <span className="relative z-10 text-sm">{item.title}</span>
+            <span className="relative z-10 text-xs">{item.title}</span>
           </Link>
         ))}
       </div>

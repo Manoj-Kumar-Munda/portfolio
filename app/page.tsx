@@ -7,7 +7,7 @@ import { projectList } from "@/constants";
 
 export default function Home() {
   return (
-    <Container className="min-h-screen p-4 md:p-10">
+    <Container className="min-h-screen p-6 md:py-10">
       <Heading>Manoj Kr. Munda</Heading>
       <Subheading>
         I am a software engineer with a passion for building web applications
