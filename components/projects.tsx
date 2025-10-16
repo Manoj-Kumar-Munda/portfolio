@@ -8,7 +8,7 @@ import { projectList } from "@/constants";
 
 const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
   return (
-    <div className="py-8">
+    <div>
       <Subheading as="p">
         I love building projects that solve real-world problems and help people.
       </Subheading>

@@ -14,7 +14,9 @@ export default function Home() {
         and exploring new technologies. I'm currently working as a frontend
         engineer at Google.
       </Subheading>
-      <Projects projects={projectList.slice(0, 3)} />
+      <div className="py-8">
+        <Projects projects={projectList.slice(0, 3)} />
+      </div>
       <Subheading className="text-secondary py-4">
         A collection of all blog posts written by me.
       </Subheading>
