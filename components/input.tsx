@@ -4,7 +4,7 @@ import { InputHTMLAttributes, RefObject, useId } from "react";
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   className?: string;
-  ref: RefObject<HTMLInputElement | null>;
+  ref?: RefObject<HTMLInputElement | null>;
 }
 
 const Input = ({ ref, label, className, ...props }: InputProps) => {
