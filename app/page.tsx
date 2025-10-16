@@ -15,7 +15,7 @@ export default function Home() {
         engineer at Google.
       </Subheading>
       <Projects projects={projectList.slice(0, 3)} />
-      <Subheading className="text-secondary mb-4">
+      <Subheading className="text-secondary py-4">
         A collection of all blog posts written by me.
       </Subheading>
       <Blogs />
