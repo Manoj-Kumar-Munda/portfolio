@@ -1,0 +1,75 @@
+---
+title: "Next.js App Router Primer"
+slug: "nextjs-app-router-primer"
+date: 2025-10-16
+description: "A concise primer on Next.js App Router: folder conventions, routing patterns, and data fetching in the app directory."
+tags: ["Next.js", "App Router", "React", "Frontend"]
+image: "https://placehold.co/600x400"
+---
+
+![Dummy Image](https://placehold.co/600x400)
+
+## Introduction
+This primer explains the essentials of the Next.js App Router (the `app/` directory). You'll learn folder conventions, how routes map to files, layouts, nested routing, and recommended data-fetching patterns for server and client components.
+
+## Folder & Routing Conventions
+The `app/` directory uses filesystem-based routing. Each folder becomes a route segment and special files provide structure:
+
+- `page.tsx` — route's UI (required for a route to exist)
+- `layout.tsx` — shared layout for nested routes
+- `loading.tsx` — loading UI for route-level suspense
+- `error.tsx` — error boundary for a segment
+
+Example structure:
+
+````
+app/
+  layout.tsx      # global layout
+  page.tsx        # /
+  blog/
+    layout.tsx    # /blog/* layout
+    page.tsx      # /blog
+    [slug]/
+      page.tsx    # /blog/:slug
+````
+
+## Server vs Client Components
+Prefer server components by default (no "use client"). Use client components when you need state, effects, or browser-only APIs.
+
+```tsx
+// client-button.tsx
+"use client";
+import React from 'react';
+export default function ClientButton() {
+  const [count, setCount] = React.useState(0);
+  return <button onClick={() => setCount(c => c + 1)}>{count}</button>;
+}
+```
+
+## Data Fetching Patterns
+Use async server components for data fetching and pass data to client components as props. For client-driven fetching, use libraries like TanStack Query.
+
+```tsx
+// server page example
+export default async function Page() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts/1', { next: { revalidate: 60 } });
+  const post = await res.json();
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+    </article>
+  );
+}
+```
+
+## Tips & Best Practices
+- Keep layouts thin and focused on structure.
+- Use nested layouts for shared UI between related routes.
+- Avoid heavy client bundles: keep client components minimal.
+- Use the `fetch` caching options (`revalidate`) for simple caching.
+
+## Conclusion
+The App Router simplifies route composition and server-first rendering. Start by organizing routes with `page.tsx` and `layout.tsx`, favor server components for faster loads, and add client components only when interactivity is required.
+
+
