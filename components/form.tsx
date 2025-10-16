@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 interface FormState {
   message: string;
-  success: boolean;
+  success: null | boolean;
 }
 type FormAction = (
   prevState: FormState,
@@ -34,7 +34,7 @@ const submitAction: FormAction = async (prevState, formData) => {
 };
 
 const ContactForm = () => {
-  const initialState: FormState = { message: "", success: false };
+  const initialState: FormState = { message: "", success: null };
   const [state, handleSubmit, pending] = useActionState<FormState, FormData>(
     submitAction,
     initialState,
@@ -54,7 +54,7 @@ const ContactForm = () => {
           />
           <Textarea label="Message" rows={6} name="message" />
 
-          {!state.success && (
+          {state.success === false && (
             <p className="text-xs text-red-500">All fields are required</p>
           )}
 
