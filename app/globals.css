@@ -14,6 +14,15 @@
   --color-secondary: var(--color-neutral-400);
 }
 
+.glass {
+  background-image: linear-gradient(
+    to_bottom,
+    var(--color-gray-200),
+    transparent_8px,
+    var(--color-gray-200) _26px
+  );
+}
+
 .striped-bg {
   background: white
     repeating-linear-gradient(
