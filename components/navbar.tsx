@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import Container from "./container";
 
 const navItems = [
   {
@@ -51,57 +52,59 @@ const Navbar = () => {
   });
 
   return (
-    <motion.nav
-      style={{
-        backdropFilter: blurStyle,
-        background: backgroundOpacity,
-      }}
-      animate={{
-        width: isScrolled ? "80%" : "100%",
-        y: isScrolled ? 8 : 0,
-        border: isScrolled ? "1px solid rgba(200,200,200,0.2)" : "none",
-        borderRadius: isScrolled ? "999px" : "0",
-      }}
-      transition={{
-        duration: 0.3,
-        ease: "easeInOut",
-      }}
-      className={cn(
-        "sticky inset-x-0 top-0 z-20 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-transparent px-2 py-1 dark:bg-neutral-900",
-      )}
-    >
-      <Link href={"/"}>
-        <Image
-          src={profile}
-          alt="Profile"
-          width={100}
-          height={100}
-          className="size-10 rounded-full object-cover"
-        />
-      </Link>
+  
+      <motion.nav
+        style={{
+          backdropFilter: blurStyle,
+          background: backgroundOpacity,
+        }}
+        animate={{
+          width: isScrolled ? "80%" : "100%",
+          y: isScrolled ? 8 : 0,
+          border: isScrolled ? "1px solid rgba(200,200,200,0.2)" : "none",
+          borderRadius: isScrolled ? "999px" : "0",
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+        className={cn(
+          "sticky inset-x-0 top-0 z-20 mx-auto flex max-w-4xl items-center justify-between rounded-full px-2 py-1 dark:bg-neutral-900",
+        )}
+      >
+        <Link href={"/"}>
+          <Image
+            src={profile}
+            alt="Profile"
+            width={100}
+            height={100}
+            className="size-10 rounded-full object-cover"
+          />
+        </Link>
 
-      <div className="flex items-center">
-        {navItems.map((item, idx) => (
-          <Link
-            key={item.title}
-            href={item.href}
-            className={cn("relative px-2 py-1", {
-              "text-neutral-400": pathname === item.href,
-            })}
-            onMouseEnter={() => setHoveredIndex(idx)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            {hoveredIndex === idx && (
-              <motion.span
-                layoutId="hover-span"
-                className="dark:bg-neutal-800 absolute inset-0 h-full w-full rounded-md bg-neutral-100"
-              />
-            )}
-            <span className="relative z-10 text-xs">{item.title}</span>
-          </Link>
-        ))}
-      </div>
-    </motion.nav>
+        <div className="flex items-center">
+          {navItems.map((item, idx) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className={cn("relative px-2 py-1", {
+                "text-neutral-400": pathname === item.href,
+              })}
+              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {hoveredIndex === idx && (
+                <motion.span
+                  layoutId="hover-span"
+                  className="dark:bg-neutal-800 absolute inset-0 h-full w-full rounded-md bg-neutral-100"
+                />
+              )}
+              <span className="relative z-10 text-xs">{item.title}</span>
+            </Link>
+          ))}
+        </div>
+      </motion.nav>
+    
   );
 };
 

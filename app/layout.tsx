@@ -25,7 +25,7 @@ export default function RootLayout({
         <body
           className={`${inter.className} bg-neutral-100 antialiased dark:bg-neutral-700`}
         >
-          <Container className="relative">
+          <Container className="relative px-4">
             <div className="striped-bg absolute top-0 bottom-0 -left-6 h-full w-6" />
             <div className="striped-bg absolute inset-y-0 -right-6  h-full w-6" />
             <Navbar />
