@@ -40,11 +40,10 @@ const ContactForm = () => {
     initialState,
   );
 
-  console.log({ pending });
-
   return (
-    <Container className="my-4 p-4 md:my-10 md:p-10">
-      <div className="mx-auto max-w-lg">
+    <Container className="relative my-4 p-4 md:p-10">
+      <div className="absolute inset-x-0 bottom-0 h-6 w-full scale-x-110 border-t border-b border-neutral-200" />
+      <div className="relative mx-auto max-w-lg rounded border-neutral-300 p-12">
         <form action={handleSubmit} className="flex flex-col gap-4">
           <Input label="Full name" placeholder={"Elon Musk"} name="name" />
           <Input
