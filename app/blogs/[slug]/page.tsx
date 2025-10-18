@@ -17,7 +17,7 @@ export async function generateMetadata({
         description: frontmatter.description || "A blog post by Manoj",
       };
     }
-  } catch (err: any) {
+  } catch (err) {
     console.error(err);
     return { title: "Post Not Found" };
   }
