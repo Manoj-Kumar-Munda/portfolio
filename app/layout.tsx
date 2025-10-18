@@ -26,11 +26,11 @@ export default function RootLayout({
         <body
           className={`${inter.className} bg-neutral-100 antialiased dark:bg-neutral-700`}
         >
-          <Container className="relative">
+          <Container className="relative min-h-svh">
             <div className="striped-bg absolute inset-y-0 -left-6 hidden h-full w-6 lg:block" />
             <div className="striped-bg absolute inset-y-0 -right-6 hidden h-full w-6 lg:block" />
             <Navbar />
-            {children}
+            <div className="md:py-10">{children}</div>
             <Footer />
           </Container>
         </body>

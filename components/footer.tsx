@@ -9,7 +9,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex items-center justify-between border-t border-neutral-200 bg-white p-4">
+    <div className="absolute bottom-0 inset-x-0 flex items-center justify-between border-t border-neutral-200 bg-white p-4">
       <span className="text-secondary text-xs">Built with love by Manoj</span>
       <div className="flex items-center gap-4">
         <Link href={"https://github.com/Manoj-Kumar-Munda"}>
