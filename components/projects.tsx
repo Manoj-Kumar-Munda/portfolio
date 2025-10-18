@@ -10,7 +10,7 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
   return (
     <>
       <Subheading as="p">I love building things.</Subheading>
-      <div className="grid grid-cols-1 gap-4 px-4 py-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 sm:gap-4 px-4 py-4 sm:grid-cols-2 md:grid-cols-3">
         {projects.map((project, idx) => (
           <motion.div
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
