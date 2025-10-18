@@ -8,7 +8,7 @@ const Blogs = async ({ className }: { className?: string }) => {
       {posts.map((post) => (
         <Link
           href={`/blogs/${post.slug}`}
-          className="prose-img:m-0 prose-h2:m-0 flex cursor-pointer items-start justify-between gap-2 rounded-md p-2 no-underline hover:bg-neutral-50 md:p-4"
+          className="prose-img:m-0 prose-h2:m-0 flex cursor-pointer items-start justify-between gap-2 rounded-md p-2 no-underline hover:bg-neutral-50"
           key={post.title}
         >
           <div className="flex max-w-xl flex-col justify-start gap-1 ">

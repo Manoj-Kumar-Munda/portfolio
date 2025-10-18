@@ -11,7 +11,7 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <Container className="min-h-svh p-6 md:py-10">
+    <Container className="min-h-svh md:py-10 relative">
       {children}
     </Container>
   );

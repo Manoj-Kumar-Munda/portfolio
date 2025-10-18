@@ -69,16 +69,16 @@ const Navbar = () => {
           ease: "easeInOut",
         }}
         className={cn(
-          "sticky inset-x-0 top-0 z-20 mx-auto flex max-w-4xl items-center justify-between rounded-full px-2 py-1 dark:bg-neutral-900",
+          "sticky inset-x-2 top-1 z-20 mx-auto flex max-w-4xl items-center justify-between rounded-full px-2 py-1 dark:bg-neutral-900",
         )}
       >
         <Link href={"/"}>
           <Image
             src={profile}
             alt="Profile"
-            width={100}
-            height={100}
-            className="size-10 rounded-full object-cover"
+            width={36}
+            height={36}
+            className="size-9 rounded-full object-cover"
           />
         </Link>
 

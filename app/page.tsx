@@ -20,9 +20,10 @@ export default function Home() {
     <Container className="min-h-screen md:py-10">
       <Heading>Manoj Kr. Munda</Heading>
       <Subheading>
-        I am a <GlassEffect>software engineer</GlassEffect> with a passion for
-        building web applications and exploring new technologies. Have 1+ years
-        of experience of working at a startup as a frontend engineer.
+        I am a <GlassEffect>software engineer</GlassEffect> passionate about
+        building web applications and working with emerging technologies, with
+        over one year of experience as a frontend engineer in a startup
+        environment.
       </Subheading>
 
       <Separator />
@@ -31,7 +32,7 @@ export default function Home() {
       <Subheading className="text-secondary">
         A collection of all blog posts written by me.
       </Subheading>
-      <Blogs className="py-4" />
+      <Blogs className="px-2 py-4" />
       <Separator />
     </Container>
   );

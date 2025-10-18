@@ -7,10 +7,10 @@ const ProjectsPage = () => {
     <>
       <Heading>Projects</Heading>
       <Subheading>
-        I'm a passionate software engineer dedicated to crafting elegant
-        solutions for complex problems. With expertise in full-stack
-        development, I enjoy building user-centric applications that make a
-        difference.
+        Below are some of the applications I’ve developed, showcasing
+        my problem-solving mindset and hands-on experience in frontend
+        engineering. Each project represents a step forward in my learning and
+        growth as a developer.
       </Subheading>
       <Separator />
       <Projects />
