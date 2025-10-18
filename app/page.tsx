@@ -17,7 +17,7 @@ export const GlassEffect = ({ children }: { children: ReactNode }) => {
 
 export default function Home() {
   return (
-    <Container className="min-h-screen md:py-10">
+    <Container className="md:py-10">
       <Heading>Manoj Kr. Munda</Heading>
       <Subheading>
         I am a <GlassEffect>software engineer</GlassEffect> passionate about

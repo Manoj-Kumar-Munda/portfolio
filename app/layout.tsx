@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ViewTransitions } from "next-view-transitions";
 import Container from "@/components/container";
+import Footer from "@/components/footer";
 
 const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -30,6 +31,7 @@ export default function RootLayout({
             <div className="striped-bg absolute inset-y-0 -right-6 hidden h-full w-6 lg:block" />
             <Navbar />
             {children}
+            <Footer />
           </Container>
         </body>
       </html>
