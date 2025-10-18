@@ -17,6 +17,7 @@ const Heading = ({
       transition={{
         ease: "easeInOut",
       }}
+      className="px-4"
     >
       <Tag className="text-primary text-2xl font-bold tracking-tighter drop-shadow-lg md:text-4xl">
         {children}

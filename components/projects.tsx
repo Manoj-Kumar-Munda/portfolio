@@ -8,11 +8,11 @@ import { projectList } from "@/constants";
 
 const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
   return (
-    <div>
+    <>
       <Subheading as="p">
         I love building projects that solve real-world problems and help people.
       </Subheading>
-      <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3 px-4">
         {projects.map((project, idx) => (
           <motion.div
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
@@ -43,7 +43,7 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
           </motion.div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
