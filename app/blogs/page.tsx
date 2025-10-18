@@ -1,6 +1,7 @@
 import Heading from "@/components/heading";
 import Blogs from "./_components/blogs";
 import Subheading from "@/components/subheading";
+import Separator from "@/components/separator";
 
 const AllBlogs = () => {
   return (
@@ -9,10 +10,11 @@ const AllBlogs = () => {
       <Subheading as="p">
         A collection of all blog posts written by me.
       </Subheading>
-
-      <div className="space-y-4 py-2">
+      <Separator />
+      <div className="space-y-4 py-2 px-2">
         <Blogs />
       </div>
+      <Separator />
     </div>
   );
 };

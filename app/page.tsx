@@ -5,6 +5,7 @@ import Heading from "@/components/heading";
 import Subheading from "@/components/subheading";
 import { projectList } from "@/constants";
 import { ReactNode } from "react";
+import Separator from "@/components/separator";
 
 export const GlassEffect = ({ children }: { children: ReactNode }) => {
   return (
@@ -16,20 +17,23 @@ export const GlassEffect = ({ children }: { children: ReactNode }) => {
 
 export default function Home() {
   return (
-    <Container className="min-h-screen p-4 md:py-10">
+    <Container>
       <Heading>Manoj Kr. Munda</Heading>
       <Subheading>
-        I am a <GlassEffect>software engineer</GlassEffect> with a passion for
-        building web applications and exploring new technologies. Have 1+ years
-        of experience of working at a startup as a frontend engineer.
+        I am a <GlassEffect>software engineer</GlassEffect> passionate about
+        building web applications and working with emerging technologies, with
+        over one year of experience as a frontend engineer in a startup
+        environment.
       </Subheading>
-      <div className="py-8">
-        <Projects projects={projectList.slice(0, 3)} />
-      </div>
-      <Subheading className="text-secondary py-4">
+
+      <Separator />
+      <Projects projects={projectList.slice(0, 3)} />
+      <Separator />
+      <Subheading className="text-secondary">
         A collection of all blog posts written by me.
       </Subheading>
-      <Blogs />
+      <Blogs className="px-2 py-4" />
+      <Separator />
     </Container>
   );
 }

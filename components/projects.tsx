@@ -8,11 +8,9 @@ import { projectList } from "@/constants";
 
 const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
   return (
-    <div>
-      <Subheading as="p">
-        I love building projects that solve real-world problems and help people.
-      </Subheading>
-      <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
+    <>
+      <Subheading as="p">I love building things.</Subheading>
+      <div className="grid grid-cols-1 gap-6 sm:gap-4 px-4 py-4 sm:grid-cols-2 md:grid-cols-3">
         {projects.map((project, idx) => (
           <motion.div
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
@@ -34,16 +32,16 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
               height={280}
               className="w-full rounded-xl object-cover"
             />
-            <h2 className="mt-2 pl-1 text-base font-semibold tracking-tight text-neutral-600 dark:text-neutral-400">
+            <h2 className="mt-2 pl-1 text-sm font-semibold tracking-tight text-neutral-600 dark:text-neutral-400">
               {project.title}
             </h2>
-            <p className="max-w-xs pl-1 text-xs text-gray-500 dark:text-neutral-400">
+            <p className="pl-1 text-xs text-gray-500 dark:text-neutral-400">
               {project.description}
             </p>
           </motion.div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

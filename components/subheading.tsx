@@ -19,6 +19,7 @@ const Subheading = ({
       transition={{
         ease: "easeInOut",
       }}
+      className="px-4"
     >
       <Tag
         className={cn(
