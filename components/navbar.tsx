@@ -12,7 +12,6 @@ import {
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import Container from "./container";
 
 const navItems = [
   {

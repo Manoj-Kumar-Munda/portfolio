@@ -17,7 +17,8 @@ export async function generateMetadata({
         description: frontmatter.description || "A blog post by Manoj",
       };
     }
-  } catch (err) {
+  } catch (err: any) {
+    console.error(err);
     return { title: "Post Not Found" };
   }
 }
@@ -32,7 +33,7 @@ export default async function Page({
     const { content, frontmatter } = await getPostBySlug(slug);
 
     return (
-      <article className="prose max-w-none w-full prose-img:mx-auto not-prose-h1:text-sm">
+      <article className="prose prose-img:mx-auto not-prose-h1:text-sm w-full max-w-none">
         {frontmatter?.title && (
           <h1 className="mb-4 text-3xl font-bold">
             {String(frontmatter.title)}
@@ -43,6 +44,7 @@ export default async function Page({
       </article>
     );
   } catch (err) {
+    console.error(err)
     notFound();
   }
 }

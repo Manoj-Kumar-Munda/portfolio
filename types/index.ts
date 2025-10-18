@@ -1,10 +1,10 @@
 export interface PostFrontmatter {
-  title?: string;
-  slug?: string;
+  title: string;
+  slug: string;
   date?: string;
-  description?: string;
+  description: string;
   tags?: string[];
-  image?: string;
+  image: string;
 }
 
 export interface IProjects {

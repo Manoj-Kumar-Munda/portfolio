@@ -7,7 +7,7 @@ const ContactPage = () => {
     <div className="relative">
       <Heading>Contact Me</Heading>
       <Subheading className="max-w-md">
-        I'm open for full-time roles. Reach out to me to inquire more about my
+        I&apos;m open for full-time roles. Reach out to me to inquire more about my
         work.
       </Subheading>
 
