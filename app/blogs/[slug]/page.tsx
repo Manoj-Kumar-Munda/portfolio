@@ -41,7 +41,7 @@ export default async function Page({
           <Subheading>{String(frontmatter.description)}</Subheading>
         )}
 
-        <section className="prose-headings:py-2 prose-p:text-secondary prose-code:bg-gray-200 px-4 [&_code::after]:content-none [&_code::before]:content-none [&_pre>code]:bg-inherit prose-em:text-sm">
+        <section className="prose-headings:py-2 prose-p:text-secondary prose-code:bg-gray-200 px-4 [&_code::after]:content-none [&_code::before]:content-none [&_pre>code]:bg-inherit prose-em:text-sm prose-img:border prose-img:rounded-md prose-img:border-neutral-200">
           {content}
         </section>
       </article>
