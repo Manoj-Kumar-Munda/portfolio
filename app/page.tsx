@@ -6,6 +6,7 @@ import Subheading from "@/components/subheading";
 import { projectList } from "@/constants";
 import { ReactNode } from "react";
 import Separator from "@/components/separator";
+import { listPosts } from "@/lib/posts";
 
 export const GlassEffect = ({ children }: { children: ReactNode }) => {
   return (
@@ -15,7 +16,8 @@ export const GlassEffect = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default function Home() {
+export default async function Home() {
+  const posts = await listPosts();
   return (
     <Container>
       <Heading>Manoj Kr. Munda</Heading>
@@ -32,7 +34,7 @@ export default function Home() {
       <Subheading className="text-secondary">
         A collection of all blog posts written by me.
       </Subheading>
-      <Blogs className="px-2 py-4" />
+      <Blogs className="px-2 py-4" posts={posts.slice(0, 3)} />
     </Container>
   );
 }
