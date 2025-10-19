@@ -33,7 +33,6 @@ export default function Home() {
         A collection of all blog posts written by me.
       </Subheading>
       <Blogs className="px-2 py-4" />
-      <Separator />
     </Container>
   );
 }

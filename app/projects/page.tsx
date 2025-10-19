@@ -14,7 +14,6 @@ const ProjectsPage = () => {
       </Subheading>
       <Separator />
       <Projects />
-      <Separator />
     </>
   );
 };

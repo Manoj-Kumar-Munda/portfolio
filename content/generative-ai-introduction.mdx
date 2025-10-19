@@ -12,18 +12,14 @@ image: "https://cdn-images-1.medium.com/max/800/1*XqozYR3RiBVWNYZVDT9N5Q.png"
 
 Since the launch of OpenAI’s GPT-3 model, it has taken the world by storm. From tech to non-tech, everyone started talking about AI. Some began integrating it into their daily work, while others feared it would lead to job losses by automating their tasks. For many, it feels magical, but is it? In this blog, we will **demystify** **GPTs**, and by the end, you’ll realize it’s not magic at all—it’s just a powerful system that predicts the next word (token).
 
----
-
-### What is GPT?
+## What is GPT?
 
 **GPT** stands for **Generative Pre-trained Transformer**. By its full name, we can see that a GPT is a tool that takes a query and generates the next possible outcome (called a **token**), based on the data it was trained on. This is similar to how we work! We can only solve problems we have knowledge of, which is exactly what a large language model (LLM) does.  
 Suppose I ask a 5-year-old what comes after ‘A.’ He will reply ‘B’. But if I ask him to explain Newton’s Laws of Motion, he won’t know the answer. The child can only answer things they have been taught, nothing beyond that.
 
 Let’s understand some key topics related to GPTs.
 
----
-
-#### Tokenization
+## Tokenization
 
 When a user enters a prompt, it is broken into a sequence of tokens through a process called **tokenization**. Tokens are the basic units of text, such as words, subwords, or punctuation, that are predefined in the Large Language Model’s (LLM) vocabulary. Each token is mapped to a unique numerical ID, which the model uses to process and understand the input.
 
@@ -32,9 +28,7 @@ In the diagram below, you can see how an input query is broken into tokens and t
 ![Visualization of the tokenization process](https://cdn-images-1.medium.com/max/800/1*GWClA58IuHy4oEZM1LYoFQ.png)
 *Visualization of the tokenization process, breaking down the sentence into tokens with their unique IDs.*
 
----
-
-#### Input Embeddings
+## Input Embeddings
 
 Once your prompt has been broken into tokens (numbers), the model can’t just work with them as they are. It needs to understand the meaning and context of those numbers. This is where **input embeddings** come in. Think of an embedding as a multidimensional vector—a list of numbers that represents a token’s meaning.
 
@@ -43,17 +37,13 @@ For example, the word “king” and the word “queen” will have similar embe
 ![Vector representation of words in space](https://cdn-images-1.medium.com/max/800/1*yYBtN3GiFtWdg9t9pXOy_A.png)
 *This image was generated using AI (ChatGPT 5).*
 
----
-
-#### Positional Encoding
+## Positional Encoding
 
 Great, so now the model understands the meaning of each word. But what about the order of the words? Without order, “The dog bit the man” would be the same as “The man bit the dog.” We know this is a huge problem. This is also why a simple sentence like “Dog chases Cat” is completely different from “Cat chases Dog.”
 
 This is where **positional encoding** saves the day. It’s a method that gives the model a sense of sequence. It allows the model to know if a word is at the beginning, middle, or end of a sentence. This information is added to the word’s embedding. By doing this, the model now has two crucial pieces of information for every word: its **meaning** and its **position** in the sentence.
 
----
-
-#### Self-attention mechanism
+## Self-attention mechanism
 
 This is the most important part of how GPTs work. It’s how the model understands the full meaning of a word based on the words around it.
 
@@ -61,9 +51,7 @@ Think about the word “bank.” In the phrase “**a river bank**,” you know 
 
 The **self-attention mechanism** works the same way. For each word, it looks at the other words in the sentence to understand the correct context and meaning. This is what allows GPTs to generate text that makes sense and is grammatically correct.
 
----
-
-### Conclusion
+## Conclusion
 
 So, as you can see, GPT isn’t magic—it’s a series of intelligent steps. It breaks down your query with **tokenization,** understands the meaning and order with **embeddings** and **positional encoding,** and uses **self-attention** to grasp the full context. With these enriched embeddings flowing through more transformer layers, the model predicts the next token by picking the most likely one from its vocabulary, adds it to the sequence, and repeats to build the full response.
 
