@@ -1,0 +1,52 @@
+---
+title: "Tanstack Query: isLoading, isPending and isFetching"
+slug: "tanstack-query-loading-states"
+date: 2025-10-19
+description: "A simple guide to understanding the differences between isLoading, isPending, and isFetching in TanStack Query and when to use each for effective loading states."
+tags: ["TanStack Query", "React", "Data Fetching", "State Management", "Frontend"]
+image: "https://cdn-images-1.medium.com/max/800/1*eRzT0sNkAXYWBnh4eQk4VQ.jpeg"
+---
+![Dummy Image](https://cdn-images-1.medium.com/max/800/1*eRzT0sNkAXYWBnh4eQk4VQ.jpeg)
+
+When working with **Tanstack Query V5**, you’ll come across three commonly used flags: `isLoading`, `isPending` and `isFetching`. They may seem similar, but each has a specific role and meaning in the data-fetching lifecycle.
+In this blog, we’ll clearly break down what each one does, how they’re different, and when to use them in your app.
+
+
+## Why these flags matter?
+
+React Query does a great job of handling **fetching**, **caching**, and **updating** server data behind the scenes. But as developers, we still need to respond to what’s happening during those processes.
+
+That’s where **isPending**, **isLoading** and **isFetching** come in; they help us understand the current state of a query, so we can show the right loading indicators at the right time.
+
+
+## isPending
+
+This boolean flag tells you that your query is in its initial fetching state and does not yet have any data in the cache. Once the query successfully fetches data, it becomes `false`, even if that data is considered stale and being refetched in the background.
+
+**Use case:** Use `isPending` to show a first-time loading screen or full-page loader.
+
+
+## isFetching
+
+The `isFetching` flag is `true` any time a fetch is in progress, whether it's the initial load or a background refetch. This makes it especially useful for showing subtle loading indicators while data is being refreshed in the background, without disrupting the current UI.
+
+**Use case:** Suppose you have a list component on your page that updates in the background. In that case, instead of a full loading screen, you can just show a small loader right inside that list area while it fetches new data.
+
+
+## isLoading
+
+In TanstackQuery v5, `isLoading` is essentially a combination of `isPending` and `isFetching⁣`.
+
+It means `isLoading` is `true` only when the query is pending (has no cached data) and it is actively fetching (network request).
+
+However, for most UI needs, you’ll find `isPending` and `isFetching` cover all cases more directly. This often makes `isLoading` less essential in practice.
+
+
+## Conclusion
+
+Understanding the differences between `isPending`, `isFetching`, and `isLoading` helps you build responsive and user-friendly UIs with React Query. If you’re using **React Query v5**, it’s a good idea to rely on:
+
+- `isPending` or `isLoading` for **first-time loads.**
+- `isFetching` for **background refreshes.**
+
+**Tanstack Query** does the heavy lifting; you just need to show the right UI at the right time.
