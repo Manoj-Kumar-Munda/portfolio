@@ -13,10 +13,9 @@ const AllBlogs = async () => {
         A collection of all blog posts written by me.
       </Subheading>
       <Separator />
-      <div className="space-y-4 px-2 py-2">
+      <div className="space-y-4 px-4 py-4">
         <Blogs posts={posts} />
       </div>
-      <Separator />
     </div>
   );
 };

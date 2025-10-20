@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils";
 import { PostFrontmatter } from "@/types";
 import { motion } from "motion/react";
 import { Link } from "next-view-transitions";
@@ -12,7 +13,7 @@ const Blogs = ({
   posts: PostFrontmatter[];
 }) => {
   return (
-    <div className={className}>
+    <div className={cn("space-y-4", className)}>
       {posts.map((post, idx) => (
         <motion.div
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
@@ -27,7 +28,7 @@ const Blogs = ({
         >
           <Link
             href={`/blogs/${post.slug}`}
-            className="prose-img:m-0 prose-h2:m-0 flex cursor-pointer items-start justify-between gap-2 rounded-md p-4 no-underline hover:bg-neutral-100 transition-colors duration-300"
+            className="prose-img:m-0 prose-h2:m-0 flex cursor-pointer items-start justify-between gap-2 rounded-md p-4 no-underline transition-colors duration-300 hover:bg-neutral-100 border border-neutral-100"
             key={post.title}
           >
             <div className="flex max-w-xl flex-col justify-start gap-1">
