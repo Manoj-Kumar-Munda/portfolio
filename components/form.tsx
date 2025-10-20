@@ -42,7 +42,7 @@ const ContactForm = () => {
 
   return (
     <Container className="relative">
-      <div className="relative mx-auto max-w-lg rounded border-neutral-300 p-12">
+      <div className="relative mx-auto max-w-lg rounded border-neutral-300 p-4 sm:p-6 md:p-8 lg:p-12">
         <form action={handleSubmit} className="flex flex-col gap-4">
           <Input label="Full name" placeholder={"Elon Musk"} name="name" />
           <Input

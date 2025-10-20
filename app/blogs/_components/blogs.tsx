@@ -28,12 +28,12 @@ const Blogs = ({
         >
           <Link
             href={`/blogs/${post.slug}`}
-            className="prose-img:m-0 prose-h2:m-0 flex cursor-pointer items-start justify-between gap-2 rounded-md p-4 no-underline transition-colors duration-300 hover:bg-neutral-100 border border-neutral-100"
+            className="prose-img:m-0 prose-h2:m-0 flex cursor-pointer items-start justify-between gap-2 rounded-md p-2 md:p-4 no-underline transition-colors duration-300 hover:bg-neutral-100 border border-neutral-100"
             key={post.title}
           >
             <div className="flex max-w-xl flex-col justify-start gap-1">
-              <h2 className="text-base font-bold">{post.title}</h2>
-              <p className="line-clamp-3 text-xs text-neutral-500 md:text-sm">
+              <h2 className="text-sm sm:text-base font-bold tracking-tight">{post.title}</h2>
+              <p className="line-clamp-3 text-xs text-neutral-500 sm:text-sm">
                 {post.description}
               </p>
             </div>

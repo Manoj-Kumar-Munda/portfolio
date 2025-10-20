@@ -30,7 +30,7 @@ export default function RootLayout({
             <div className="striped-bg absolute inset-y-0 -left-6 hidden h-full w-6 lg:block" />
             <div className="striped-bg absolute inset-y-0 -right-6 hidden h-full w-6 lg:block" />
             <Navbar />
-            <div className="py-6 md:py-10">{children}</div>
+            <div className="py-4 md:py-10">{children}</div>
             <Footer />
           </Container>
         </body>

@@ -14,7 +14,7 @@ const ContactPage = () => {
 
       <Separator />
       <ContactForm />
-      <Separator />
+      <Separator className="hidden md:block" />
     </div>
   );
 };
