@@ -31,6 +31,9 @@ const Skills = () => {
               delay: idx * 0.08,
               ease: "easeInOut",
             }}
+            viewport={{
+              once: true,
+            }}
             className="relative z-10 flex items-center gap-2 rounded-md border border-neutral-300 bg-white px-4 py-2"
           >
             {IconMap[item]}
