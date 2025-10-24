@@ -42,24 +42,97 @@ export const SocialPlatformIcons = (
 
 export const projectList: IProjects[] = [
   {
-    title: "Project One",
-    description: "A brief description of Project One.",
-    src: "/project-1.png",
+    title: "Livedraft",
+    description: "A live text editing platform for collaborative writing.",
+    src: "/projects/livedraft.png",
+    technologies: [
+      "React",
+      "Next",
+      "Typescript",
+      "Tailwind",
+      "ShadCN",
+      "ConvexDB",
+      "Liveblocks",
+      "Zod",
+      "Zustand",
+      "Tiptap",
+    ],
+    link: "https://livedraft.vercel.app/",
+    github: "https://github.com/Manoj-Kumar-Munda/livedraft",
   },
   {
-    title: "Project Two",
-    description: "A brief description of Project Two.",
-    src: "/project-2.png",
+    title: "Watchway",
+    description: "A platform for watching and sharing videos like youtube.",
+    src: "/projects/watchway.png",
+    technologies: [
+      "React",
+      "Next",
+      "Javascript",
+      "Tailwind",
+      "ShadCN",
+      "Redux",
+      "Redux-toolkit",
+      "NodeJS",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "React-Query",
+      "Cloudinary",
+    ],
+    link: "https://watchway.vercel.app/",
+    github: "https://github.com/Manoj-Kumar-Munda/watchway-backend",
   },
   {
-    title: "Project Three",
-    description: "A brief description of Project Three.",
-    src: "/project-3.png",
+    title: "Cravebite",
+    description: "A frontend food delivery application like Swiggy or Zomato.",
+    src: "/projects/cravebite.png",
+    technologies: [
+      "React",
+      "Javascript",
+      "CSS",
+      "Redux",
+      "Redux-toolkit",
+      "Tailwind CSS",
+      "React-Router-DOM",
+      "Motion",
+    ],
+    link: "https://cravebite.netlify.app/",
+    github: "https://github.com/Manoj-Kumar-Munda/cravebite"
   },
   {
-    title: "Project Four",
-    description: "A brief description of Project Four.",
-    src: "/project-4.png",
+    title: "Foodtime",
+    description: "A beautiful landing page for a restaurant.",
+    src: "/projects/foodtime.png",
+    technologies: [
+      "React",
+      "Javascript",
+      "CSS",
+      "Redux",
+      "Redux-toolkit",
+      "Tailwind CSS",
+      "React-Router-DOM",
+      "Motion",
+    ],
+    link: "https://fooodtime.netlify.app/",
+    github: "https://github.com/Manoj-Kumar-Munda/foodtime"
+  },
+  {
+    title: "PennyPlan",
+    description:
+      "A frontend personal finance management app to track expenses and budgets.",
+    src: "/projects/pennyplan.png",
+    technologies: [
+      "React",
+      "Javascript",
+      "CSS",
+      "Redux",
+      "Redux-toolkit",
+      "Tailwind CSS",
+      "React-Router-DOM",
+    ],
+    link: "https://pennyplan.netlify.app/",
+    github: "https://github.com/Manoj-Kumar-Munda/PennyPlan"
   },
 ];
 
@@ -86,7 +159,7 @@ export const ExperienceList: Experience[] = [
       "React-Native",
       "Motion",
       "ShadCN",
-      "Tanstack-Query"
+      "Tanstack-Query",
     ],
 
     responsibilities: [
