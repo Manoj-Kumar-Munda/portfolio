@@ -1,4 +1,5 @@
 import { SocialPlatform } from "@/constants";
+import { type TSkill } from "@/constants/skills";
 import { StaticImageData } from "next/image";
 
 export interface PostFrontmatter {
@@ -25,6 +26,7 @@ export interface Experience {
     }[];
     logo: StaticImageData;
   };
+  technologies: TSkill[];
   role: string;
   location: string;
   duration: string;

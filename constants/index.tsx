@@ -78,6 +78,16 @@ export const ExperienceList: Experience[] = [
     role: "Software Engineer-Frontend",
     location: "UK (Remote)",
     duration: "July 2024 - July 2025",
+    technologies: [
+      "React",
+      "Typescript",
+      "Tailwind",
+      "Next",
+      "React-Native",
+      "Motion",
+      "ShadCN",
+      "Tanstack-Query"
+    ],
 
     responsibilities: [
       "Collaborated with cross-functional teams including designers and backend developers to implement user-friendly features and ensure seamless integration with APIs.",

@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
 import Container from "./container";
 import Subheading from "./subheading";
 import Link from "next/link";
 import { ExperienceList, SocialPlatformIcons } from "@/constants";
+import SkillButton from "./skill-button";
+import { motion } from "motion/react";
 
 const Experience = () => {
   return (
@@ -10,9 +13,27 @@ const Experience = () => {
       <Subheading>My professional journey in tech so far..</Subheading>
 
       <div className="p-4">
-        <ul className="space-y-4">
+        <motion.ul className="space-y-4">
           {ExperienceList.map((experience, idx) => (
-            <li key={idx}>
+            <motion.li
+              key={idx}
+              initial={{ y: 20, filter: "blur(3px)", opacity: 0 }}
+              whileInView={{
+                y: 0,
+                filter: "blur(0px)",
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+                delay: idx * 0.08,
+                damping: 10,
+              }}
+              viewport={{
+                once: true,
+              }}
+            >
+              {/* header */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Image
@@ -52,7 +73,17 @@ const Experience = () => {
                 </div>
               </div>
 
-              <div className="mt-4 pr-4 pl-8">
+              <div className="mt-4 space-y-4 px-4">
+                <div className="space-y-1">
+                  <h3 className="text-xs font-bold">Technologies & Tools</h3>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {experience.technologies.map((tech, idx) => (
+                      <SkillButton key={idx} skill={tech} idx={idx} />
+                    ))}
+                  </div>
+                </div>
+
+                {/* responsibilities */}
                 <ul className="list-disc space-y-2">
                   {experience.responsibilities.map((responsibility, idx) => (
                     <li key={idx}>
@@ -61,9 +92,9 @@ const Experience = () => {
                   ))}
                 </ul>
               </div>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </div>
     </Container>
   );
