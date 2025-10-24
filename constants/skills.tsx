@@ -1,7 +1,6 @@
 import ReactIcon from "@/app/assets/skills/react.svg";
 import JavascriptIcon from "@/app/assets/skills/js.svg";
 import TypescriptIcon from "@/app/assets/skills/typescript.svg";
-import ReactNativeIcon from "@/app/assets/skills/react-native.svg";
 import CssIcon from "@/app/assets/skills/css.svg";
 import ExpressIcon from "@/app/assets/skills/express.svg";
 import GithubIcon from "@/app/assets/skills/github.svg";
@@ -29,7 +28,7 @@ export const IconMap: Record<TSkill, any> = {
   React: <ReactIcon />,
   Javascript: <JavascriptIcon />,
   Typescript: <TypescriptIcon />,
-  "React-Native": <ReactNativeIcon />,
+  "React-Native": <ReactIcon />,
   CSS: <CssIcon />,
   Next: <NextIcon />,
   Vitest: <VitestIcon />,
