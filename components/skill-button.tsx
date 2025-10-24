@@ -11,9 +11,13 @@ const SkillButton = ({ skill, idx }: { skill: TSkill; idx: number }) => {
         y: 0,
         filter: "blur(0px)",
         opacity: 1,
+        transition: {
+            delay: idx * 0.08,
+            damping: 10
+        }
       }}
       whileHover={{
-        scale: 1.08,
+        scale: 1.05,
         boxShadow: "var(--shadow-lg)",
         transition: {
           duration: 0.2,
@@ -21,16 +25,15 @@ const SkillButton = ({ skill, idx }: { skill: TSkill; idx: number }) => {
       }}
       transition={{
         duration: 0.3,
-        delay: idx * 0.08,
         ease: "easeInOut",
       }}
       viewport={{
         once: true,
       }}
-      className="relative z-10 flex items-center gap-2 rounded-md border border-neutral-300 bg-white px-4 py-2"
+      className="border-secondary relative z-10 flex items-center gap-2 rounded-md border border-dashed bg-white px-2 py-1.5"
     >
       {IconMap[skill]}
-      <span className="text-xs">{skill}</span>
+      <span className="text-primary text-[10px] font-bold">{skill}</span>
     </motion.div>
   );
 };

@@ -9,7 +9,10 @@ import TailwindIcon from "@/app/assets/skills/tailwind.svg";
 import NextIcon from "@/app/assets/skills/nextjs.svg";
 import VitestIcon from "@/app/assets/skills/vitest.svg";
 import { IconAi } from "@tabler/icons-react";
-
+import MotionIcon from "@/app/assets/skills/motion.svg";
+import ShadCNIcon from "@/app/assets/skills/shadcn.svg";
+import TanstackQueryIcon from "@/app/assets/skills/tanstack_query.png";
+import Image from "next/image";
 export type TSkill =
   | "React"
   | "Javascript"
@@ -22,8 +25,10 @@ export type TSkill =
   | "Node"
   | "Github"
   | "Express"
-  | "GenAI";
-
+  | "GenAI"
+  | "Motion"
+  | "ShadCN"
+  | "Tanstack-Query";
 export const IconMap: Record<TSkill, any> = {
   React: <ReactIcon />,
   Javascript: <JavascriptIcon />,
@@ -37,6 +42,11 @@ export const IconMap: Record<TSkill, any> = {
   Github: <GithubIcon />,
   Express: <ExpressIcon />,
   GenAI: <IconAi className="size-4" />,
+  Motion: <MotionIcon />,
+  ShadCN: <ShadCNIcon />,
+  "Tanstack-Query": (
+    <Image src={TanstackQueryIcon} alt="Tanstack Query" className="h-4 w-4" />
+  ),
 };
 
 export const skills = Object.keys(IconMap) as TSkill[];
