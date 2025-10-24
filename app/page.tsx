@@ -8,6 +8,7 @@ import { ReactNode } from "react";
 import Separator from "@/components/separator";
 import { listPosts } from "@/lib/posts";
 import Skills from "@/components/skills";
+import Experience from "@/components/experience";
 
 export const GlassEffect = ({ children }: { children: ReactNode }) => {
   return (
@@ -33,6 +34,9 @@ export default async function Home() {
       <Projects projects={projectList.slice(0, 3)} />
       <Separator />
       <Skills />
+      <Separator />
+
+      <Experience />
       <Separator />
       <Subheading className="text-secondary">
         A collection of all blog posts written by me.
