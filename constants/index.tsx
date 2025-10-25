@@ -158,7 +158,7 @@ export const ExperienceList: Experience[] = [
     },
     role: "Software Engineer-Frontend",
     location: "UK (Remote)",
-    duration: "July 2024 - July 2025",
+    duration: "Jul 2024 - Jul 2025",
     technologies: [
       "React",
       "Typescript",
