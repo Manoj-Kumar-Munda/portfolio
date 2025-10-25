@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio website template",
+  title: "Manoj - Portfolio",
   description: "A perfect portfolio website template to showcase your work.",
 };
 
@@ -26,7 +26,7 @@ export default function RootLayout({
         <body
           className={`${inter.className} bg-neutral-100 antialiased dark:bg-neutral-700`}
         >
-          <Container className="relative min-h-svh">
+          <Container className="relative min-h-svh pb-10">
             <div className="striped-bg absolute inset-y-0 -left-6 hidden h-full w-6 lg:block" />
             <div className="striped-bg absolute inset-y-0 -right-6 hidden h-full w-6 lg:block" />
             <Navbar />

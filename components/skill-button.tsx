@@ -12,7 +12,7 @@ const SkillButton = ({ skill, idx }: { skill: TSkill; idx: number }) => {
         filter: "blur(0px)",
         opacity: 1,
         transition: {
-            delay: idx * 0.08,
+            delay: idx * 0.05,
             damping: 10
         }
       }}

@@ -18,6 +18,7 @@ export interface IProjects {
   technologies?: (TSkill | string)[];
   link?: string;
   github?: string;
+  details?: string[];
 }
 
 export interface Experience {
