@@ -156,7 +156,7 @@ export const ExperienceList: Experience[] = [
       ],
       logo: FutyLogo,
     },
-    role: "Software Engineer-Frontend",
+    role: "SWE-Frontend",
     location: "UK (Remote)",
     duration: "Jul 2024 - Jul 2025",
     technologies: [

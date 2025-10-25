@@ -75,7 +75,9 @@ const Experience = () => {
 
               <div className="mt-4 space-y-4">
                 <div className="space-y-1">
-                  <h3 className="text-xs font-bold">Technologies & Tools</h3>
+                  <h3 className="text-secondary text-xs">
+                    Technologies & Tools
+                  </h3>
                   <div className="flex flex-wrap items-center gap-2">
                     {experience.technologies.map((tech, idx) => (
                       <SkillButton key={idx} skill={tech} idx={idx} />
