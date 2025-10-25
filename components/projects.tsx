@@ -42,7 +42,7 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
             exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
             // layoutId={`container-${activeProject.title}`}
             ref={modalRef}
-            className="fixed inset-4 overflow-x-hidden sm:inset-0 z-50 m-auto flex max-h-[70vh]  flex-col gap-2 overflow-y-auto rounded-lg  bg-white p-2 sm:gap-4 sm:p-4 lg:max-w-2xl"
+            className="fixed inset-4 z-50 m-auto flex max-h-[70vh] flex-col gap-2 overflow-x-hidden overflow-y-auto rounded-lg bg-white p-3 sm:inset-0 sm:gap-4 sm:p-4 lg:max-w-2xl"
           >
             <motion.img
               src={activeProject.src}
@@ -60,7 +60,7 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
                 </p>
               </div>
 
-              <div className="flex items-center  sm:gap-2">
+              <div className="flex items-center sm:gap-2">
                 <Link
                   href={activeProject.link ?? ""}
                   target="_blank"
@@ -138,23 +138,25 @@ const Project = ({
   return (
     <motion.div
       onClick={() => onClick(project)}
-      initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
+      whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+      whileTap={{ scale: 0.95, transition: { duration: 0.2 } }}
       viewport={{ once: true }}
       transition={{
         duration: 0.3,
         ease: "easeInOut",
-        delay: idx * 0.05,
+        delay: idx * 0.08,
       }}
       key={idx}
-      className="group shrink-0 cursor-pointer rounded-lg border border-transparent p-2 transition-all duration-300 hover:border-neutral-300"
+      className="group cursor-pointer rounded-lg"
     >
       <motion.img
         src={project.src}
         alt={project.title}
         width={500}
         height={280}
-        className="h-48 w-full rounded-xl border border-neutral-300 object-cover transition-all duration-300 group-hover:border-transparent"
+        className="h-48 w-full rounded-xl border border-neutral-100 object-cover transition-all duration-300"
       />
       <motion.h2 className="text-primary mt-2 pl-1 text-sm font-semibold tracking-tight">
         {project.title}
@@ -162,21 +164,7 @@ const Project = ({
       <motion.p className="text-secondary pl-1 text-xs">
         {project.description}
       </motion.p>
-      {/* <motion.div className="mt-2 flex flex-wrap gap-1 pl-1">
-        {project.technologies?.slice(0, 3)?.map((tech, idx) => (
-          <span
-            key={idx}
-            className="rounded-md bg-neutral-100 px-2 py-1 text-[10px] text-neutral-600"
-          >
-            {tech}
-          </span>
-        ))}
-        {project.technologies && project.technologies.length > 3 && (
-          <span className="rounded-md bg-neutral-100 px-2 py-1 text-[10px] text-neutral-600">
-            ...
-          </span>
-        )}
-      </motion.div> */}
+
       <button className="text-primary mt-2 ml-1 flex cursor-pointer justify-end rounded bg-neutral-100 px-1.5 py-1 text-xs hover:bg-neutral-200">
         View Details
       </button>
