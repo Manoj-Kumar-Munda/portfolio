@@ -42,7 +42,7 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
             exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
             // layoutId={`container-${activeProject.title}`}
             ref={modalRef}
-            className="fixed inset-4 z-50 m-auto flex max-h-[70vh] flex-col gap-2 overflow-x-hidden overflow-y-auto rounded-lg bg-white p-3 sm:inset-0 sm:gap-4 sm:p-4 lg:max-w-2xl"
+            className="fixed inset-4 z-50 m-auto flex max-h-[70vh] flex-col gap-2 overflow-x-hidden overflow-y-auto rounded-lg bg-white p-3 sm:inset-0 sm:gap-4 sm:p-4 lg:max-w-2xl h-fit"
           >
             <motion.img
               src={activeProject.src}
