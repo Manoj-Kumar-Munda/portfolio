@@ -19,6 +19,7 @@ export interface IProjects {
   link?: string;
   github?: string;
   details?: string[];
+  status?: "completed" | "in-progress" | "planned";
 }
 
 export interface Experience {

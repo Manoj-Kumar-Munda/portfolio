@@ -42,7 +42,7 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
             exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
             // layoutId={`container-${activeProject.title}`}
             ref={modalRef}
-            className="fixed inset-4 z-50 m-auto flex max-h-[70vh] flex-col gap-2 overflow-x-hidden overflow-y-auto rounded-lg bg-white p-3 sm:inset-0 sm:gap-4 sm:p-4 lg:max-w-2xl h-fit"
+            className="fixed inset-4 z-50 m-auto flex h-fit max-h-[70vh] flex-col gap-2 overflow-x-hidden overflow-y-auto rounded-lg bg-white p-3 sm:inset-0 sm:gap-4 sm:p-4 lg:max-w-2xl"
           >
             <motion.img
               src={activeProject.src}
@@ -52,24 +52,37 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
 
             <div className="flex w-full items-start justify-between px-2">
               <div className="flex flex-col">
-                <h3 className="text-primary text-sm font-bold">
-                  {activeProject.title}
-                </h3>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-primary text-sm font-bold">
+                    {activeProject.title}
+                  </h3>
+                  {activeProject.status === "in-progress" && (
+                    <span className="flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-medium text-green-700">
+                      <span className="relative flex h-2 w-2">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                      </span>
+                      In Progress
+                    </span>
+                  )}
+                </div>
                 <p className="text-secondary text-xs">
                   {activeProject.description}
                 </p>
               </div>
 
               <div className="flex items-center sm:gap-2">
-                <Link
-                  href={activeProject.link ?? ""}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Live link"
-                  className="rounded bg-white p-2 transition-colors duration-300 hover:bg-neutral-100"
-                >
-                  <LinkIcon className="size-3" />
-                </Link>
+                {activeProject.link && (
+                  <Link
+                    href={activeProject.link ?? ""}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Live link"
+                    className="rounded bg-white p-2 transition-colors duration-300 hover:bg-neutral-100"
+                  >
+                    <LinkIcon className="size-3" />
+                  </Link>
+                )}
                 <Link
                   href={activeProject.github ?? ""}
                   target="_blank"

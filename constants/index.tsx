@@ -42,6 +42,32 @@ export const SocialPlatformIcons = (
 
 export const projectList: IProjects[] = [
   {
+    title: "PictoAI",
+    description: "An AI-powered image editing web application.",
+    src: "/projects/pictoai.png",
+    technologies: [
+      "React",
+      "Next",
+      "Typescript",
+      "Tailwind",
+      "ShadCN",
+      "Imagekit",
+      "KonvaJS",
+      "Gemini SDK",
+      "Zustand",
+    ],
+    status: "in-progress",
+    github: "https://github.com/Manoj-Kumar-Munda/pictoai",
+    details: [
+      "Developed an AI-powered image editing web application using Next.js, TypeScript, and Tailwind CSS with ShadCN UI components.",
+      "Features : Object removal, background removal, object addition, and apply filters/styles to images using AI.",
+      "Integrated Google Gemini API to provide advanced AI-driven image editing features such as background removal, object addition, and style transfer.",
+      "Implemented a dynamic and interactive canvas using KonvaJS, allowing users to manipulate images with ease.",
+      "Utilized Imagekit for efficient image storage and delivery, ensuring optimal performance and scalability.",
+      "Managed application state with Zustand for a seamless user experience.",
+    ],
+  },
+  {
     title: "Livedraft",
     description: "A live text editing platform for collaborative writing.",
     src: "/projects/livedraft.png",
@@ -66,6 +92,7 @@ export const projectList: IProjects[] = [
       "Integrated Clerk for robust authentication, session handling, and smooth workspace transitions between personal and organizational modes.",
       "Used Convex DB to handle real-time, reactive data workflows for synchronized document updates across users.",
     ],
+    status: "completed",
   },
   {
     title: "Watchway",
@@ -97,6 +124,7 @@ export const projectList: IProjects[] = [
       "Optimized application performance through effective state management with Redux and data fetching strategies using React Query.",
       "Deployed the backend on VPS and frontend on Vercel and setup domain with SSL for secure and reliable access.",
     ],
+    status: "completed",
   },
   {
     title: "Cravebite",
@@ -119,6 +147,7 @@ export const projectList: IProjects[] = [
       "Implemented state management with Redux and Redux-toolkit.",
       "Implemented restaurant search, food item filtering, and a user-friendly cart system to enhance the overall user experience.",
     ],
+    status: "completed",
   },
   {
     title: "Foodtime",
@@ -141,6 +170,7 @@ export const projectList: IProjects[] = [
       "Implemented smooth animations and transitions using Framer Motion to enhance user engagement.",
       "Ensured responsiveness across various devices for optimal user experience.",
     ],
+    status: "completed",
   },
 ];
 
