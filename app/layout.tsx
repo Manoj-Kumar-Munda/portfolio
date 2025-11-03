@@ -13,6 +13,28 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Manoj - Portfolio",
   description: "A perfect portfolio website template to showcase your work.",
+  openGraph: {
+    title: "Manoj Kr. Munda - Software Engineer",
+    description: "Building modern web applications with cutting-edge technologies",
+    url: "https://yourportfolio.com",
+    siteName: "Manoj Portfolio",
+    images: [
+      {
+        url: "/api/og",
+        width: 1200,
+        height: 630,
+        alt: "Manoj Kr. Munda - Software Engineer Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manoj Kr. Munda - Software Engineer",
+    description: "Building modern web applications with cutting-edge technologies",
+    images: ["/api/og"],
+  },
 };
 
 export default function RootLayout({
