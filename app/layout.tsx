@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   description: "A perfect portfolio website template to showcase your work.",
   openGraph: {
     title: "Manoj Kr. Munda - Software Engineer",
-    description: "Building modern web applications with cutting-edge technologies",
+    description:
+      "Building modern web applications with cutting-edge technologies",
     url: "https://yourportfolio.com",
     siteName: "Manoj Portfolio",
     images: [
@@ -32,7 +33,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Manoj Kr. Munda - Software Engineer",
-    description: "Building modern web applications with cutting-edge technologies",
+    description:
+      "Building modern web applications with cutting-edge technologies",
     images: ["/api/og"],
   },
 };

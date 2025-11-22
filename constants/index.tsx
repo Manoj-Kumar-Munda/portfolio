@@ -44,7 +44,7 @@ export const projectList: IProjects[] = [
   {
     title: "PictoAI",
     description: "An AI-powered image editing web application.",
-    src: "/projects/pictoai.png",
+    src: "/Portfolio/pictoai.png",
     technologies: [
       "React",
       "Next",
@@ -70,7 +70,7 @@ export const projectList: IProjects[] = [
   {
     title: "Livedraft",
     description: "A live text editing platform for collaborative writing.",
-    src: "/projects/livedraft.png",
+    src: "/Portfolio/livedraft.png",
     technologies: [
       "React",
       "Next",
@@ -97,7 +97,7 @@ export const projectList: IProjects[] = [
   {
     title: "Watchway",
     description: "A platform for watching and sharing videos like youtube.",
-    src: "/projects/watchway.png",
+    src: "/Portfolio/watchway.png",
     technologies: [
       "React",
       "Next",
@@ -129,7 +129,7 @@ export const projectList: IProjects[] = [
   {
     title: "Cravebite",
     description: "A frontend food delivery application like Swiggy or Zomato.",
-    src: "/projects/cravebite.png",
+    src: "/Portfolio/cravebite.png",
     technologies: [
       "React",
       "Javascript",
@@ -152,7 +152,7 @@ export const projectList: IProjects[] = [
   {
     title: "Foodtime",
     description: "A beautiful landing page for a restaurant.",
-    src: "/projects/foodtime.png",
+    src: "/Portfolio/foodtime.png",
     technologies: [
       "React",
       "Javascript",

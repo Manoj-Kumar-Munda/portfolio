@@ -8,6 +8,7 @@ import useClickOutside from "@/hooks/useClickOutside";
 import { useState } from "react";
 import Link from "next/link";
 import { LinkIcon } from "lucide-react";
+import { Image } from "@imagekit/next";
 import { IconBrandGithub } from "@tabler/icons-react";
 
 const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
@@ -42,12 +43,15 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
             exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
             // layoutId={`container-${activeProject.title}`}
             ref={modalRef}
-            className="fixed inset-4 z-50 m-auto flex h-fit max-h-[70vh] flex-col gap-2 overflow-x-hidden overflow-y-auto rounded-lg bg-white p-3 sm:inset-0 sm:gap-4 sm:p-4 lg:max-w-2xl"
+            className="fixed inset-4 z-50 m-auto flex h-full max-h-[75%] flex-col gap-2 overflow-x-hidden overflow-y-auto rounded-lg bg-white p-3 sm:inset-0 sm:gap-4 sm:p-4 lg:max-w-2xl"
           >
-            <motion.img
+            <Image
+              urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URL!}
               src={activeProject.src}
               alt={activeProject.title}
-              className="aspect-video max-h-[45vh] w-full shrink-0 overflow-hidden rounded-xl border border-neutral-300 object-cover"
+              width={480}
+              height={270}
+              className="aspect-video w-full shrink-0 rounded-lg"
             />
 
             <div className="flex w-full items-start justify-between px-2">
@@ -164,13 +168,16 @@ const Project = ({
       key={idx}
       className="group cursor-pointer rounded-lg"
     >
-      <motion.img
-        src={project.src}
-        alt={project.title}
-        width={500}
-        height={280}
-        className="h-48 w-full rounded-xl border border-neutral-100 object-cover transition-all duration-300"
-      />
+      <div className="aspect-video w-full overflow-hidden rounded-xl border border-neutral-100">
+        <Image
+          urlEndpoint="https://ik.imagekit.io/oviqvqhir"
+          src={project.src}
+          alt={project.title}
+          width={400}
+          height={225}
+          className="h-full w-full object-cover transition-all duration-300"
+        />
+      </div>
       <motion.h2 className="text-primary mt-2 pl-1 text-sm font-semibold tracking-tight">
         {project.title}
       </motion.h2>
