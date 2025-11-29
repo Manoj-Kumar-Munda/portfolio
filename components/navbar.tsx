@@ -12,15 +12,23 @@ import {
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import {
+  AboutIcon,
+  ProjectsIcon,
+  BlogsIcon,
+  ExternalLinkIcon,
+} from "./nav-icons";
 
 const navItems = [
   {
     title: "About",
     href: "/",
+    icon: AboutIcon,
   },
   {
     title: "Projects",
     href: "/projects",
+    icon: ProjectsIcon,
   },
   // {
   //   title: "Contact",
@@ -29,10 +37,12 @@ const navItems = [
   {
     title: "Blogs",
     href: "/blogs",
+    icon: BlogsIcon,
   },
   {
     title: "Resume",
     href: "https://drive.google.com/file/d/104yZLHboaLE8a7Z3CI11-zKK9NY9ndqo/view?usp=drive_link",
+    isExternalLink: true,
   },
 ];
 const Navbar = () => {
@@ -85,25 +95,35 @@ const Navbar = () => {
       </Link>
 
       <div className="flex items-center">
-        {navItems.map((item, idx) => (
-          <Link
-            key={item.title}
-            href={item.href}
-            className={cn("relative px-2 py-1", {
-              "text-neutral-400": pathname === item.href,
-            })}
-            onMouseEnter={() => setHoveredIndex(idx)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            {hoveredIndex === idx && (
-              <motion.span
-                layoutId="hover-span"
-                className="dark:bg-neutal-800 absolute inset-0 h-full w-full rounded-md bg-neutral-100"
-              />
-            )}
-            <span className="relative z-10 text-xs">{item.title}</span>
-          </Link>
-        ))}
+        {navItems.map((item, idx) => {
+          const Icon = item.icon;
+          const isExternalLink = item.href.startsWith("http");
+          return (
+            <Link
+              key={item.title}
+              href={item.href}
+              className={cn("relative px-2 py-1", {
+                "text-neutral-400": pathname === item.href,
+              })}
+              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              target={isExternalLink ? "_blank" : undefined}
+              rel={isExternalLink ? "noopener noreferrer" : undefined}
+            >
+              {hoveredIndex === idx && (
+                <motion.span
+                  layoutId="hover-span"
+                  className="dark:bg-neutal-800 absolute inset-0 h-full w-full rounded-md bg-neutral-100"
+                />
+              )}
+              <span className="relative z-10 flex items-center gap-1 text-xs">
+                {Icon && <Icon size={14} />}
+                {item.title}
+                {isExternalLink && <ExternalLinkIcon size={12} />}
+              </span>
+            </Link>
+          );
+        })}
       </div>
     </motion.nav>
   );
