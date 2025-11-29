@@ -24,10 +24,10 @@ export default async function Home() {
     <Container>
       <Heading>Manoj Kr. Munda</Heading>
       <Subheading>
-        I am a <GlassEffect>software engineer</GlassEffect> passionate about
-        building web applications and working with emerging technologies, with
-        over one year of experience as a frontend engineer in a startup
-        environment.
+        I am a <GlassEffect>Software engineer</GlassEffect> passionate about
+        building web applications and working with emerging technologies. With
+        over a year of professional experience as a frontend engineer, I
+        specialize in creating responsive, user-centric interfaces.
       </Subheading>
 
       <Separator />
