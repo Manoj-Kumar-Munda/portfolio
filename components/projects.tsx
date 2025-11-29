@@ -41,7 +41,7 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
             initial={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
             animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
-            // layoutId={`container-${activeProject.title}`}
+            layoutId={`container-${activeProject.title}`}
             ref={modalRef}
             className="fixed inset-4 z-50 m-auto flex h-full max-h-[75%] flex-col gap-2 overflow-x-hidden overflow-y-auto rounded-lg bg-white p-3 sm:inset-0 sm:gap-4 sm:p-4 lg:max-w-2xl"
           >
