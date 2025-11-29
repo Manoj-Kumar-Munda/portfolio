@@ -43,16 +43,18 @@ const Projects = ({ projects = projectList }: { projects?: IProjects[] }) => {
             exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
             layoutId={`container-${activeProject.title}`}
             ref={modalRef}
-            className="fixed inset-4 z-50 m-auto flex h-full max-h-[75%] flex-col gap-2 overflow-x-hidden overflow-y-auto rounded-lg bg-white p-3 sm:inset-0 sm:gap-4 sm:p-4 lg:max-w-2xl"
+            className="fixed inset-x-4 inset-y-1/5 z-50 m-auto flex h-[80svh] flex-col gap-2 overflow-x-hidden overflow-y-auto rounded-lg bg-white p-3 sm:inset-0 sm:gap-4 sm:p-4 lg:max-w-2xl"
           >
-            <Image
-              urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URL!}
-              src={activeProject.src}
-              alt={activeProject.title}
-              width={480}
-              height={270}
-              className="aspect-video w-full shrink-0 rounded-lg"
-            />
+            <div className="h-64 border border-gray-300 shrink-0 w-full overflow-hidden rounded-lg">
+              <Image
+                urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URL!}
+                src={activeProject.src}
+                alt={activeProject.title}
+                width={480}
+                height={280}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <div className="flex w-full items-start justify-between px-2">
               <div className="flex flex-col">
@@ -184,7 +186,7 @@ const Project = ({
         {project.description}
       </motion.p>
 
-      <button className="text-primary mt-2 ml-1 flex cursor-pointer justify-end rounded bg-neutral-200 px-1.5 py-1 text-xs hover:bg-neutral-100">
+      <button className="text-primary mt-2 ml-1 flex cursor-pointer justify-end rounded bg-neutral-100 px-1.5 py-1 text-xs hover:bg-neutral-200">
         Details
       </button>
     </motion.div>
