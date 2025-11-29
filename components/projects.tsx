@@ -157,7 +157,6 @@ const Project = ({
       onClick={() => onClick(project)}
       initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
       whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
       whileTap={{ scale: 0.95, transition: { duration: 0.2 } }}
       viewport={{ once: true }}
       transition={{
@@ -174,7 +173,7 @@ const Project = ({
           src={project.src}
           alt={project.title}
           width={400}
-          height={225}
+          height={144}
           className="h-full w-full object-cover transition-all duration-300"
         />
       </div>
@@ -185,8 +184,8 @@ const Project = ({
         {project.description}
       </motion.p>
 
-      <button className="text-primary mt-2 ml-1 flex cursor-pointer justify-end rounded bg-neutral-100 px-1.5 py-1 text-xs hover:bg-neutral-200">
-        View Details
+      <button className="text-primary mt-2 ml-1 flex cursor-pointer justify-end rounded bg-neutral-200 px-1.5 py-1 text-xs hover:bg-neutral-100">
+        Details
       </button>
     </motion.div>
   );
