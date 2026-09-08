@@ -1,9 +1,7 @@
 "use client";
-import React from "react";
 import Container from "./container";
 import Subheading from "./subheading";
-import { motion } from "motion/react";
-import { IconMap, skills } from "@/constants/skills";
+import { skills } from "@/constants/skills";
 import SkillButton from "./skill-button";
 
 const Skills = () => {

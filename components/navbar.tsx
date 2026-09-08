@@ -42,7 +42,7 @@ const navItems = [
   },
   {
     title: "Resume",
-    href: "https://drive.google.com/file/d/104yZLHboaLE8a7Z3CI11-zKK9NY9ndqo/view?usp=drive_link",
+    href: "https://drive.google.com/file/d/1HkSlYxov74UiJXRuG1ZyCQqcilwU5juf/view?usp=sharing",
     isExternalLink: true,
     icon: ResumeIcon,
   },
